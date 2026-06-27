@@ -9,6 +9,7 @@ theme:
   name: material
   language: nl
   custom_dir: docs/overrides
+  favicon: images/favicon.ico
   features:
     - navigation.tabs
     - navigation.tabs.sticky

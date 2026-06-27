@@ -1,24 +1,52 @@
-# GitHub Pages — eenmalige instelling
+# GitHub Pages — instelling
 
-Na de eerste succesvolle workflow-run:
+De MkDocs-site wordt door GitHub Actions gebouwd en naar de branch **`gh-pages`**
+gepusht. GitHub Pages moet die branch **serveren** — niet `main`.
+
+## Eenmalige instelling
 
 1. **Repository → Settings → Pages**
 2. **Build and deployment → Source:** `Deploy from a branch`
-3. **Branch:** `gh-pages` / `/ (root)`
+3. **Branch:** `gh-pages` — map **`/ (root)`**
+4. **Save**
 
-De workflow `.github/workflows/docs-pages.yml` publiceert:
+Boven aan de pagina moet verschijnen:
 
-| Branch | URL |
-| ------ | --- |
-| `main` | https://orthodox-groningen.github.io/bron/ |
-| overige branches | https://orthodox-groningen.github.io/bron/preview/ |
+> Your site is live at **https://orthodox-groningen.github.io/bron/**
 
-`keep_files: true` zorgt dat production en preview elkaar niet overschrijven.
+## Deploy via workflow
+
+| Push naar | Doel op `gh-pages` | URL |
+| --------- | ------------------ | --- |
+| `main` | root (productie) | https://orthodox-groningen.github.io/bron/ |
+| andere branch | `preview/` | https://orthodox-groningen.github.io/bron/preview/ |
+
+Workflow: `.github/workflows/docs-pages.yml` — `keep_files: true` houdt productie
+en preview naast elkaar.
+
+## Veelvoorkomend probleem: je ziet README i.p.v. MkDocs
+
+**Symptoom:** op github.io staat de tekst uit **`README.md`** (repo-root), zonder
+header-tabs, zonder Material-thema.
+
+**Oorzaak:** Pages staat op branch **`main`** (Jekyll rendert README), terwijl de
+gebouwde site op **`gh-pages`** staat.
+
+**Oplossing:** Settings → Pages → branch **`gh-pages`**, folder **`/ (root)`** —
+niet `main`, niet `/docs`.
+
+**Controle:** op `gh-pages` hoort `index.html` te beginnen met MkDocs/Material
+(`md-header`, `md-tabs`). Op `main` staat alleen bron-Markdown in `docs/`.
 
 ## Workflow-rechten
 
-Onder **Settings → Actions → General → Workflow permissions** moet
-**Read and write permissions** aan staan (voor `GITHUB_TOKEN` → `gh-pages`).
+Settings → Actions → General → **Workflow permissions** →
+**Read and write permissions** (als deploy naar `gh-pages` faalt).
+
+## Favicon
+
+Statische assets staan in `docs/images/` (favicon.ico, png-varianten) en worden
+via `mkdocs.yml` / theme meegebouwd.
 
 ## Lokaal
 
