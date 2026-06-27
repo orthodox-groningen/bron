@@ -1,0 +1,8 @@
+# Handleidingen
+
+Procedures voor beheerders van de bron-repository.
+
+- [GitHub Pages instellen](github-pages-setup.md)
+- [Zangstuk toevoegen](zangstuk-toevoegen.md)
+- [Bronvariant toevoegen](bronvariant-toevoegen.md)
+- [Copyright en access](copyright-access.md)

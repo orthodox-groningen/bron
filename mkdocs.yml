@@ -8,7 +8,11 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: nl
+  custom_dir: docs/overrides
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
     - navigation.instant
     - navigation.tracking
     - navigation.sections
@@ -34,15 +38,18 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Specificaties:
+    - specs/index.md
     - specs/inhoudslevenscyclus.md
     - specs/repo-structuur.md
     - specs/zangstuk-formaat.md
   - Handleidingen:
+    - manuals/index.md
     - manuals/github-pages-setup.md
     - manuals/zangstuk-toevoegen.md
     - manuals/bronvariant-toevoegen.md
     - manuals/copyright-access.md
   - Referentie:
+    - reference/index.md
     - reference/conversiemechanismen.md
     - reference/exportcontracten.md
     - reference/brontypes-validatie.md
@@ -50,5 +57,15 @@ nav:
     - plans/README.md
     - plans/samenvatting-project.md
 
+extra_css:
+  - stylesheets/extra.css
+
 extra:
   preview: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/orthodox-groningen/bron
+      name: bron op GitHub
+    - icon: fontawesome/solid/code
+      link: https://orthodox-groningen.github.io/VSA-tooling/
+      name: VSA-tooling demosite
