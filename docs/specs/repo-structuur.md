@@ -1,0 +1,80 @@
+# Repo-structuur
+
+Status: specificatie (juni 2026).
+
+## Doel en scope
+
+De `bron`-repository is de centrale bron van waarheid voor muzikale inhoud binnen
+`orthodox-groningen`. Parochie-sites consumeren deze repository; ze bewerken hem
+niet rechtstreeks.
+
+De repository bevat **bronnen** en metadata. Geen afgeleide bestanden (SVG, MXL
+uit VSA) in git, en geen parochie-specifiek gebruik.
+
+## Top-level structuur
+
+```
+bron/
+├── README.md
+├── LICENSE-CONTENT
+├── LICENSE-CODE
+├── mkdocs.yml                  # documentatiesite (GitHub Pages)
+├── requirements-docs.txt
+├── docs/                       # → orthodox-groningen.github.io/bron/
+│   ├── specs/
+│   ├── manuals/
+│   ├── reference/
+│   └── plans/
+├── zangstukken/                # inhoud — niet de docs-site
+│   └── <zangstuk-id>/
+├── composities/                # toekomst — YAML-lijsten zangstukken
+└── derived/                    # .gitignore — lokale/CI afgeleide
+```
+
+## Documentatie vs. inhoud
+
+| Pad | GitHub Pages | Doel |
+| --- | ------------ | ---- |
+| `docs/` | ja | Specs, handleidingen, referentie, plannen |
+| `zangstukken/` | nee | Brondocumenten + `zangstuk.yaml` |
+| `composities/` | nee | Volgorde/referenties (toekomst) |
+| `derived/` | nee, niet in git | Build-output |
+
+## Het zangstuk
+
+### Definitie
+
+Een **zangstuk** is de eenheid waarvoor één of meer bronnen bestaan. Mapnaam =
+stabiele `id` onder `zangstukken/`.
+
+### Bron versus afgeleid
+
+- **Bron:** geen geautomatiseerd generatiepad vanuit een ander bestand *in deze repo*
+  (VSA, scan, MusicXML uit MuseScore, …).
+- **Afgeleid:** geautomatiseerd uit bron (SVG/MXL via VSA-tooling). Niet in git.
+
+### Naamgeving `zangstuk-id`
+
+- Lowercase, koppeltekens, geen diakritische tekens
+- Vast feest: `<type>-<gelegenheid-slug>` — `troparion-nicolaas-van-myra`
+- Zondagscyclus: `<type>-zondag-toon-<n>` — `troparion-zondag-toon-1`
+- Geen gelegenheid: algemene naam — `trisagion`
+- **Stabiel:** niet hernoemen zodra externe referenties bestaan
+
+## Eén bronbestand, meerdere zangstukken
+
+- **VSA/tekst:** splitsen — één `.vsa` per zangstuk in de juiste map
+- **Scan/PDF:** niet splitsen; tweede zangstuk verwijst met relatief `file:` naar scan
+  bij het eerste zangstuk
+
+## Composities (nog niet uitgewerkt)
+
+YAML onder `composities/` met ordered list van `{ zangstuk, source }` — zie
+[Plannen: samenvatting project](../plans/samenvatting-project.md).
+
+## Nog te ontwerpen
+
+- Build-stap voor afgeleide + publieke index (JSON) voor parochie-builds
+- Filter: `file:` wel meenemen, `access:` niet in gepubliceerde index
+
+Zie [Inhoudslevenscyclus](inhoudslevenscyclus.md).

@@ -1,0 +1,37 @@
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+========================================================================
+
+This applies to the musical and textual content in this repository
+(chant texts, VSA notation source files, and associated metadata),
+EXCLUDING any third-party copyrighted material that is explicitly
+excluded and referenced via an `access:` pointer in a `zangstuk.yaml`
+file rather than included as a file in this repository.
+
+Full license text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Summary (not a substitute for the full license):
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material
+  for any purpose, even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to
+    the license, and indicate if changes were made.
+  - ShareAlike — If you remix, transform, or build upon the material,
+    you must distribute your contributions under the same license as
+    the original.
+
+No additional restrictions — You may not apply legal terms or
+technological measures that legally restrict others from doing
+anything the license permits.
+
+Notices:
+  - Individual chant entries may carry their own attribution
+    requirements (composer, arranger, source reference) recorded in
+    their `zangstuk.yaml` metadata; these must be preserved when
+    reusing the material.
+  - Material referenced via an `access:` block (rather than included
+    as a file) is NOT covered by this license and remains under its
+    own copyright; consult the referenced contact point or source.

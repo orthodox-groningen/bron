@@ -1,0 +1,54 @@
+site_name: bron — documentatie
+site_description: Documentatie van de centrale bronrepository voor orthodoxe kerkmuziek (VSA)
+site_url: https://orthodox-groningen.github.io/bron/
+repo_url: https://github.com/orthodox-groningen/bron
+repo_name: orthodox-groningen/bron
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: nl
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - Specificaties:
+    - specs/inhoudslevenscyclus.md
+    - specs/repo-structuur.md
+    - specs/zangstuk-formaat.md
+  - Handleidingen:
+    - manuals/github-pages-setup.md
+    - manuals/zangstuk-toevoegen.md
+    - manuals/bronvariant-toevoegen.md
+    - manuals/copyright-access.md
+  - Referentie:
+    - reference/conversiemechanismen.md
+    - reference/exportcontracten.md
+    - reference/brontypes-validatie.md
+  - Plannen:
+    - plans/README.md
+    - plans/samenvatting-project.md
+
+extra:
+  preview: false

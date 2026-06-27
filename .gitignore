@@ -1,0 +1,34 @@
+# Afgeleide bestanden worden gegenereerd uit de VSA-bronnen en horen niet
+# als bron in deze repository te staan. Als er lokaal of via een build-stap
+# toch afgeleide output in een /derived/-achtige map terechtkomt, hou die
+# hier buiten git.
+derived/
+**/derived/
+
+# Veelgebruikte afgeleide bestandstypen, voor het geval ze per ongeluk
+# buiten een derived/-map belanden
+*.svg
+*.musicxml
+*.mp3
+*.pdf
+!zangstukken/**/sources/scan/**/*.pdf
+
+# Besturingssysteem / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# MkDocs build output
+site/
+site-*/
+*.tmp
+*.bak
+~$*
+
+# Eventuele lokale scripting-omgevingen (Python/Node), voor als er later
+# conversie-/validatie-tools bijkomen
+.venv/
+__pycache__/
+node_modules/

@@ -1,0 +1,88 @@
+name: Deploy documentation
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs-gh-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy MkDocs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Determine deploy target
+        id: target
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            echo "site_url=https://orthodox-groningen.github.io/bron/" >> "$GITHUB_OUTPUT"
+            echo "destination_dir=" >> "$GITHUB_OUTPUT"
+            echo "preview=false" >> "$GITHUB_OUTPUT"
+            echo "label=production" >> "$GITHUB_OUTPUT"
+          else
+            echo "site_url=https://orthodox-groningen.github.io/bron/preview/" >> "$GITHUB_OUTPUT"
+            echo "destination_dir=preview" >> "$GITHUB_OUTPUT"
+            echo "preview=true" >> "$GITHUB_OUTPUT"
+            echo "label=preview" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Show deploy target
+        run: |
+          echo "Target: ${{ steps.target.outputs.label }}"
+          echo "site_url: ${{ steps.target.outputs.site_url }}"
+          echo "destination_dir: ${{ steps.target.outputs.destination_dir }}"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install documentation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-docs.txt
+
+      - name: Configure MkDocs site URL
+        run: |
+          python scripts/set-mkdocs-site-url.py \
+            "${{ steps.target.outputs.site_url }}" \
+            "${{ steps.target.outputs.preview }}"
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict --site-dir site
+
+      - name: Deploy to GitHub Pages (production)
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: site
+          keep_files: true
+
+      - name: Deploy to GitHub Pages (preview)
+        if: github.ref != 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: site
+          destination_dir: preview
+          keep_files: true
+
+      - name: Show site URL
+        run: |
+          if [[ "${{ steps.target.outputs.label }}" == "production" ]]; then
+            echo "Documentation URL: https://orthodox-groningen.github.io/bron/"
+          else
+            echo "Preview URL: https://orthodox-groningen.github.io/bron/preview/"
+          fi
