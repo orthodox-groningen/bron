@@ -22,12 +22,12 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>GitHub Pages — eenmalige instelling - bron — documentatie</title>
+        <title>GitHub Pages — instelling - bron — documentatie</title>
       
     
     
@@ -58,6 +58,10 @@
 
     
     
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+
   </head>
   
   
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github-pages-eenmalige-instelling" class="md-skip">
+        <a href="#github-pages-instelling" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHub Pages — eenmalige instelling
+              GitHub Pages — instelling
             
           </span>
         </div>
@@ -651,7 +655,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Pages — eenmalige instelling
+    GitHub Pages — instelling
   
 
     
@@ -669,7 +673,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Pages — eenmalige instelling
+    GitHub Pages — instelling
   
 
     
@@ -695,10 +699,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#eenmalige-instelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eenmalige instelling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-via-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy via workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veelvoorkomend-probleem-je-ziet-readme-ipv-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veelvoorkomend probleem: je ziet README i.p.v. MkDocs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflow-rechten" class="md-nav__link">
     <span class="md-ellipsis">
       
         Workflow-rechten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#favicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Favicon
       
     </span>
   </a>
@@ -1133,10 +1181,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#eenmalige-instelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eenmalige instelling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-via-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy via workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veelvoorkomend-probleem-je-ziet-readme-ipv-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Veelvoorkomend probleem: je ziet README i.p.v. MkDocs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#workflow-rechten" class="md-nav__link">
     <span class="md-ellipsis">
       
         Workflow-rechten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#favicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Favicon
       
     </span>
   </a>
@@ -1179,36 +1271,59 @@
   
 
 
-<h1 id="github-pages-eenmalige-instelling">GitHub Pages — eenmalige instelling<a class="headerlink" href="#github-pages-eenmalige-instelling" title="Permanent link">&para;</a></h1>
-<p>Na de eerste succesvolle workflow-run:</p>
+<h1 id="github-pages-instelling">GitHub Pages — instelling<a class="headerlink" href="#github-pages-instelling" title="Permanent link">&para;</a></h1>
+<p>De MkDocs-site wordt door GitHub Actions gebouwd en naar de branch <strong><code>gh-pages</code></strong>
+gepusht. GitHub Pages moet die branch <strong>serveren</strong> — niet <code>main</code>.</p>
+<h2 id="eenmalige-instelling">Eenmalige instelling<a class="headerlink" href="#eenmalige-instelling" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Repository → Settings → Pages</strong></li>
 <li><strong>Build and deployment → Source:</strong> <code>Deploy from a branch</code></li>
-<li><strong>Branch:</strong> <code>gh-pages</code> / <code>/ (root)</code></li>
+<li><strong>Branch:</strong> <code>gh-pages</code> — map <strong><code>/ (root)</code></strong></li>
+<li><strong>Save</strong></li>
 </ol>
-<p>De workflow <code>.github/workflows/docs-pages.yml</code> publiceert:</p>
+<p>Boven aan de pagina moet verschijnen:</p>
+<blockquote>
+<p>Your site is live at <strong>https://orthodox-groningen.github.io/bron/</strong></p>
+</blockquote>
+<h2 id="deploy-via-workflow">Deploy via workflow<a class="headerlink" href="#deploy-via-workflow" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Branch</th>
+<th>Push naar</th>
+<th>Doel op <code>gh-pages</code></th>
 <th>URL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>main</code></td>
+<td>root (productie)</td>
 <td>https://orthodox-groningen.github.io/bron/</td>
 </tr>
 <tr>
-<td>overige branches</td>
+<td>andere branch</td>
+<td><code>preview/</code></td>
 <td>https://orthodox-groningen.github.io/bron/preview/</td>
 </tr>
 </tbody>
 </table>
-<p><code>keep_files: true</code> zorgt dat production en preview elkaar niet overschrijven.</p>
+<p>Workflow: <code>.github/workflows/docs-pages.yml</code> — <code>keep_files: true</code> houdt productie
+en preview naast elkaar.</p>
+<h2 id="veelvoorkomend-probleem-je-ziet-readme-ipv-mkdocs">Veelvoorkomend probleem: je ziet README i.p.v. MkDocs<a class="headerlink" href="#veelvoorkomend-probleem-je-ziet-readme-ipv-mkdocs" title="Permanent link">&para;</a></h2>
+<p><strong>Symptoom:</strong> op github.io staat de tekst uit <strong><code>README.md</code></strong> (repo-root), zonder
+header-tabs, zonder Material-thema.</p>
+<p><strong>Oorzaak:</strong> Pages staat op branch <strong><code>main</code></strong> (Jekyll rendert README), terwijl de
+gebouwde site op <strong><code>gh-pages</code></strong> staat.</p>
+<p><strong>Oplossing:</strong> Settings → Pages → branch <strong><code>gh-pages</code></strong>, folder <strong><code>/ (root)</code></strong> —
+niet <code>main</code>, niet <code>/docs</code>.</p>
+<p><strong>Controle:</strong> op <code>gh-pages</code> hoort <code>index.html</code> te beginnen met MkDocs/Material
+(<code>md-header</code>, <code>md-tabs</code>). Op <code>main</code> staat alleen bron-Markdown in <code>docs/</code>.</p>
 <h2 id="workflow-rechten">Workflow-rechten<a class="headerlink" href="#workflow-rechten" title="Permanent link">&para;</a></h2>
-<p>Onder <strong>Settings → Actions → General → Workflow permissions</strong> moet
-<strong>Read and write permissions</strong> aan staan (voor <code>GITHUB_TOKEN</code> → <code>gh-pages</code>).</p>
+<p>Settings → Actions → General → <strong>Workflow permissions</strong> →
+<strong>Read and write permissions</strong> (als deploy naar <code>gh-pages</code> faalt).</p>
+<h2 id="favicon">Favicon<a class="headerlink" href="#favicon" title="Permanent link">&para;</a></h2>
+<p>Statische assets staan in <code>docs/images/</code> (favicon.ico, png-varianten) en worden
+via <code>mkdocs.yml</code> / theme meegebouwd.</p>
 <h2 id="lokaal">Lokaal<a class="headerlink" href="#lokaal" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-docs.txt
 python<span class="w"> </span>-m<span class="w"> </span>mkdocs<span class="w"> </span>serve
