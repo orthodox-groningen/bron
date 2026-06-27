@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block announce %}
+  {% if config.extra.preview %}
+  <strong>Preview</strong> — gebouwd vanaf een branch.
+  <a href="https://orthodox-groningen.github.io/bron/">Live documentatie (main)</a>.
+  {% endif %}
+{% endblock %}
