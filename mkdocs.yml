@@ -40,6 +40,7 @@ nav:
   - Home: index.md
   - Specificaties:
     - specs/index.md
+    - specs/schrijfconventies.md
     - specs/inhoudslevenscyclus.md
     - specs/repo-structuur.md
     - specs/zangstuk-formaat.md
@@ -52,10 +53,16 @@ nav:
   - Referentie:
     - reference/index.md
     - reference/conversiemechanismen.md
+    - reference/conversie-vsa-svg.md
+    - reference/conversie-vsa-musicxml.md
     - reference/exportcontracten.md
+    - reference/exporttype-svg.md
+    - reference/exporttype-coria.md
+    - reference/exporttype-mxl.md
     - reference/brontypes-validatie.md
   - Plannen:
     - plans/README.md
+    - plans/ci-architectuur.md
     - plans/samenvatting-project.md
 
 extra_css:

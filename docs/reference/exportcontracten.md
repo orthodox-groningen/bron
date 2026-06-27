@@ -1,57 +1,91 @@
 # Exportcontracten
 
-Referentie voor **exportmechanismen**: hoe afgeleide in een samenstelling worden
-ontsloten. Authoring-syntax leeft in
-[VSA-tooling](https://github.com/orthodox-groningen/VSA-tooling/blob/main/docs/spec-vsa-document-samenstellen.md).
+Referentie voor **exportmechanismen**: hoe afgeleide (of handmatige siblings) in een
+**samenstelling** (Markdown-bundel voor parochie-uitgave) worden ontsloten.
 
-Export is **geen** conversie: export verwijst naar reeds (of tijdens build) gegenereerde
-afgeleide, of naar handmatige siblings.
+Export is **geen** conversie: export verwijst naar reeds gegenereerde afgeleide
+(bijv. `.svg`, `.mxl`) of naar handmatige siblings (`.coria.html`). Conversie
+(`vsa svg`, `vsa musicxml`) staat beschreven in
+[Conversiemechanismen](conversiemechanismen.md).
 
----
-
-## embed `svg`
-
-| Veld | Waarde |
-| ---- | ------ |
-| **Exporttype in markdown** | `:::include svg "pad/melodie.vsa"` of `:::include melodie.vsa` |
-| **Benodigde input** | `.vsa`-bron; afgeleide `.svg` |
-| **Eisen** | VSA gevalideerd; SVG gegenereerd (`vsa svg` of build-markdown) |
-| **Uitvoer** | `<img>` / Hugo shortcode in HTML |
-| **Uitgaveprofielen** | Afdruk, Online |
-| **Niet geschikt voor** | Bewerking in MuseScore |
+Authoring-syntax wordt geïmplementeerd in
+[VSA-tooling](https://github.com/orthodox-groningen/VSA-tooling/blob/main/docs/spec-vsa-document-samenstellen.md);
+**normatieve contracten** staan op deze pagina’s.
 
 ---
 
-## `coria`
+## Export vs. conversie
 
-| Veld | Waarde |
-| ---- | ------ |
-| **Exporttype** | `:::include coria "pad/melodie.vsa"` |
-| **Benodigde input** | `.vsa`-bron; **of** `{stem}.coria.html` sibling **of** afgeleide `.mxl` |
-| **Eisen** | HTML-sibling: partij al gekozen; MXL-fallback: Coria `play_from_url` |
-| **Uitvoer** | Link naar Coria HTML of Coria-speler |
-| **Uitgaveprofielen** | Online |
-| **Niet geschikt voor** | Afdruk (verberg via CSS `.coria-play`) |
+| Begrip        | Vraag die het beantwoordt                     | Voorbeeld                              |
+| ------------- | --------------------------------------------- | -------------------------------------- |
+| **Conversie** | Hoe maak ik afgeleide uit `.vsa`?             | `vsa svg lied.vsa lied.svg`            |
+| **Export**    | Hoe verschijnt afgeleide in de samenstelling? | `:::include svg "lied.vsa" alt="…":::` |
+
+Eén `.vsa`-bron kan meerdere exporttypes tegelijk hebben (SVG embed + Coria-link +
+MXL-download).
 
 ---
 
-## `mxl` (download)
+## Geregistreerde exporttypes
 
-| Veld | Waarde |
-| ---- | ------ |
-| **Exporttype** | `:::include mxl "pad/melodie.vsa"` |
-| **Benodigde input** | Afgeleide `.mxl` |
-| **Eisen** | `vsa musicxml` gedraaid; bestand bereikbaar op gepubliceerde URL |
-| **Uitvoer** | Download-link |
-| **Uitgaveprofielen** | Bewerking, Online (optioneel) |
-| **Niet geschikt voor** | Inline print |
+| Exporttype | Contract                                | Beoogd gebruik                           |
+| ---------- | --------------------------------------- | ---------------------------------------- |
+| **svg**    | [exporttype-svg](exporttype-svg.md)     | Notatie leesbaar in browser en op papier |
+| **coria**  | [exporttype-coria](exporttype-coria.md) | Online oefenen, partij kiezen            |
+| **mxl**    | [exporttype-mxl](exporttype-mxl.md)     | Download voor MuseScore / bewerking      |
+
+---
+
+## Authoring-syntax (doel)
+
+Pad is **relatief aan het includerende `.md`-bestand** (niet aan de projectroot).
+
+```markdown
+:::include svg "pad/melodie.vsa" alt="Tropaar, toon 3" scale="85%":::
+:::include coria "pad/melodie.vsa" label="Oefenen in Coria" mode="auto":::
+:::include mxl "pad/melodie.vsa" label="Download MusicXML":::
+```
+
+### Huidige vs. geplande implementatie
+
+| Syntax                                         | Status              | Opmerking                                         |
+| ---------------------------------------------- | ------------------- | ------------------------------------------------- |
+| `:::include "melodie.vsa"` (zonder exporttype) | **Geïmplementeerd** | Wrapt als `::: vsa-notatie`; SVG inline bij build |
+| `:::coria "melodie.vsa"`                       | **Geïmplementeerd** | Alias voor exporttype `coria`                     |
+| `:::include svg\|coria\|mxl "…"`               | **Gepland**         | Zie contractpagina’s; Spoor B in VSA-tooling      |
+
+Tot `:::include <exporttype>` is geïmplementeerd: gebruik platte `.vsa`-include voor
+SVG en `:::coria` voor Coria (zie [exporttype-coria](exporttype-coria.md)).
+
+---
+
+## Uitgaveprofielen
+
+Profielen zijn **geen** aparte pipelines. Eén samenstelling; export en CSS bepalen
+wat zichtbaar is.
+
+| Profiel       | Typische exporttypes                 | Conversie nodig                |
+| ------------- | ------------------------------------ | ------------------------------ |
+| **Afdruk**    | svg, `keep-together`, `@media print` | `vsa svg`                      |
+| **Online**    | svg, coria, `web-only`               | `vsa svg`, evt. `vsa musicxml` |
+| **Bewerking** | mxl-download                         | `vsa musicxml`                 |
+
+Zie [Inhoudslevenscyclus](../specs/inhoudslevenscyclus.md) Deel 3.
 
 ---
 
 ## Handmatige siblings
 
-| Bestand | Rol |
-| ------- | --- |
-| `{stem}.coria.html` | Coria-export met gekozen partij; naast `.vsa` in content-source |
+| Bestand             | Rol                                                                          |
+| ------------------- | ---------------------------------------------------------------------------- |
+| `{stem}.coria.html` | Coria-export met vooraf gekozen partij; naast `{stem}.vsa` in content-source |
 
 In de bron-repo primair VSA + scans; Coria-HTML kan in parochie-build content voorkomen.
+
+---
+
+## Gerelateerd
+
+- [Conversiemechanismen](conversiemechanismen.md)
+- [Schrijfconventies](../specs/schrijfconventies.md)
+- [VSA — document samenstellen](https://github.com/orthodox-groningen/VSA-tooling/blob/main/docs/spec-vsa-document-samenstellen.md)

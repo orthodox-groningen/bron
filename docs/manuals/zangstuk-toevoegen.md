@@ -15,10 +15,10 @@ Procedure voor beheerders (workflow 9.1).
 
 ## Meerdere zangstukken in één bronbestand
 
-| Brontype | Actie |
-| -------- | ----- |
-| VSA / tekst | Splitsen: één `.vsa` per zangstuk |
-| Scan/PDF | Niet splitsen; tweede zangstuk krijgt relatieve `file:` naar gedeelde scan |
+| Brontype    | Actie                                                                      |
+| ----------- | -------------------------------------------------------------------------- |
+| VSA / tekst | Splitsen: één `.vsa` per zangstuk                                          |
+| Scan/PDF    | Niet splitsen; tweede zangstuk krijgt relatieve `file:` naar gedeelde scan |
 
 Zie [Bronvariant toevoegen](bronvariant-toevoegen.md) voor varianten binnen één zangstuk.
 

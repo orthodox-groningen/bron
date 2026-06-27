@@ -1,49 +1,72 @@
 # Conversiemechanismen
 
-Referentiekaarten voor geautomatiseerde conversie. Implementatie:
+Referentie voor **conversiemechanismen**: geautomatiseerde tools die brondocumenten
+omzetten naar **afgeleide** bestanden (`.svg`, `.mxl`, …).
+
+Conversie is **geen** export: conversie verandert het formaat; export bepaalt hoe
+afgeleide in een samenstelling verschijnen ([Exportcontracten](exportcontracten.md)).
+
+Implementatie:
 [VSA-tooling](https://github.com/orthodox-groningen/VSA-tooling).
 
 Afgeleide output hoort **niet** in de `bron`-repository (zie `.gitignore`).
 
 ---
 
-## `vsa svg`
+## Conversie vs. export
 
-| Veld | Waarde |
-| ---- | ------ |
-| **CLI** | `vsa svg <input.vsa> <output.svg>` |
-| **Input** | `.vsa` (gevalideerd) |
-| **Output** | `.svg` |
-| **Output-locatie** | `derived/` lokaal; parochie `static/vsa/` of CI-artefact |
-| **Kenmerken** | Vector; VSA-glyphs + omringende tekst; schaalbaar; geen audio |
-| **Geschikt als input voor export** | embed `svg` |
-| **Metadata** | optioneel frontmatter; rendering-config via VSA-tooling |
-| **Trigger** | build-workflow / handmatig |
+| Laag      | Vraag                                   | Voorbeeld                   |
+| --------- | --------------------------------------- | --------------------------- |
+| Conversie | Wat is de afgeleide en hoe maak ik die? | `vsa svg lied.vsa lied.svg` |
+| Export    | Hoe toon ik die in een samenstelling?   | `:::include svg "lied.vsa"` |
 
 ---
 
-## `vsa musicxml`
+## Geregistreerde mechanismen
 
-| Veld | Waarde |
-| ---- | ------ |
-| **CLI** | `vsa musicxml <input.vsa> <output.mxl>` |
-| **Input** | `.vsa` (gevalideerd; muziek-metadata in frontmatter aanbevolen) |
-| **Output** | `.mxl` (default) of `.musicxml` |
-| **Output-locatie** | `derived/` lokaal; parochie static of CI |
-| **Kenmerken** | MusicXML compressed; playback- of engraving-profiel; MuseScore/Coria |
-| **Geschikt als input voor export** | `coria` (via URL), `mxl` download |
-| **Trigger** | build-workflow / handmatig |
+| Mechanisme       | Contract                                            | Output               |
+| ---------------- | --------------------------------------------------- | -------------------- |
+| **vsa svg**      | [conversie-vsa-svg](conversie-vsa-svg.md)           | `.svg`               |
+| **vsa musicxml** | [conversie-vsa-musicxml](conversie-vsa-musicxml.md) | `.mxl` / `.musicxml` |
 
-Standaardprofiel: `playback`. Zie
-[MusicXML-export (VSA-tooling)](https://github.com/orthodox-groningen/VSA-tooling/blob/main/docs/user/musicxml-export.md).
+---
+
+## Pipeline-volgorde (doel)
+
+```mermaid
+flowchart LR
+  VSA[".vsa bron"]
+  ConvSvg["vsa svg"]
+  ConvMxl["vsa musicxml"]
+  SVG[".svg"]
+  MXL[".mxl"]
+  Build["build-markdown / Hugo"]
+  VSA --> ConvSvg --> SVG
+  VSA --> ConvMxl --> MXL
+  SVG --> Build
+  MXL --> Build
+```
+
+**Huidige stand:** SVG-conversie draait deels **inline** tijdens `build-markdown`;
+MXL wordt handmatig of in site-build gegenereerd. Expliciete conversiestap vóór
+export is gepland — zie [CI-architectuur](../plans/ci-architectuur.md).
 
 ---
 
 ## Toekomstige conversies
 
-| Mechanisme | Input | Output | Status |
-| ---------- | ----- | ------ | ------ |
+| Mechanisme | Input   | Output | Status                                        |
+| ---------- | ------- | ------ | --------------------------------------------- |
 | Scan → VSA | PDF/png | `.vsa` | Niet geautomatiseerd; handmatige transcriptie |
-| Audio | — | — | Nog niet gedefinieerd |
+| Audio      | —       | —      | Nog niet gedefinieerd                         |
 
-Nieuwe mechanismen krijgen dezelfde kaartstructuur voordat ze in CI worden opgenomen.
+Nieuwe mechanismen krijgen een volledig contract (zelfde diepte als bestaande)
+**vóór** opname in CI.
+
+---
+
+## Gerelateerd
+
+- [Exportcontracten](exportcontracten.md)
+- [Inhoudslevenscyclus](../specs/inhoudslevenscyclus.md) Deel 2
+- [Schrijfconventies](../specs/schrijfconventies.md)

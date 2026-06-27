@@ -9,3 +9,6 @@ Bij tegenstrijdigheid gelden:
 2. **Handleidingen** (`docs/manuals/`)
 3. **Referentie** (`docs/reference/`)
 4. Pas daarna: plannen in deze map
+
+- [CI-architectuur](ci-architectuur.md) — conversie vs. export workflows (richtlijn)
+- [Samenvatting project](samenvatting-project.md)

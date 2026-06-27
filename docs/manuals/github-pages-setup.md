@@ -16,10 +16,10 @@ Boven aan de pagina moet verschijnen:
 
 ## Deploy via workflow
 
-| Push naar | Doel op `gh-pages` | URL |
-| --------- | ------------------ | --- |
-| `main` | root (productie) | https://orthodox-groningen.github.io/bron/ |
-| andere branch | `preview/` | https://orthodox-groningen.github.io/bron/preview/ |
+| Push naar     | Doel op `gh-pages` | URL                                                |
+| ------------- | ------------------ | -------------------------------------------------- |
+| `main`        | root (productie)   | https://orthodox-groningen.github.io/bron/         |
+| andere branch | `preview/`         | https://orthodox-groningen.github.io/bron/preview/ |
 
 Workflow: `.github/workflows/docs-pages.yml` — `keep_files: true` houdt productie
 en preview naast elkaar.

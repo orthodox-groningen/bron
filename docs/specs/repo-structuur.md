@@ -33,12 +33,12 @@ bron/
 
 ## Documentatie vs. inhoud
 
-| Pad | GitHub Pages | Doel |
-| --- | ------------ | ---- |
-| `docs/` | ja | Specs, handleidingen, referentie, plannen |
-| `zangstukken/` | nee | Brondocumenten + `zangstuk.yaml` |
-| `composities/` | nee | Volgorde/referenties (toekomst) |
-| `derived/` | nee, niet in git | Build-output |
+| Pad            | GitHub Pages     | Doel                                      |
+| -------------- | ---------------- | ----------------------------------------- |
+| `docs/`        | ja               | Specs, handleidingen, referentie, plannen |
+| `zangstukken/` | nee              | Brondocumenten + `zangstuk.yaml`          |
+| `composities/` | nee              | Volgorde/referenties (toekomst)           |
+| `derived/`     | nee, niet in git | Build-output                              |
 
 ## Het zangstuk
 
