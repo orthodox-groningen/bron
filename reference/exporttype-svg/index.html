@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://orthodox-groningen.github.io/bron/reference/brontypes-validatie/">
+        <link rel="canonical" href="https://orthodox-groningen.github.io/bron/reference/exporttype-svg/">
       
       
-        <link rel="prev" href="../exporttype-mxl/">
+        <link rel="prev" href="../exportcontracten/">
       
       
-        <link rel="next" href="../../plans/">
+        <link rel="next" href="../exporttype-coria/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Brontypes en validatie - bron — documentatie</title>
+        <title>Exporttype: embed SVG - bron — documentatie</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#brontypes-en-validatie" class="md-skip">
+        <a href="#exporttype-embed-svg" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Brontypes en validatie
+              Exporttype: embed SVG
             
           </span>
         </div>
@@ -977,10 +977,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../exporttype-svg/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exporttype: embed SVG
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -996,6 +1023,236 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#samenvatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Samenvatting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beoogde-doelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beoogde doelen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doelsyntax-gepland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doelsyntax (gepland)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huidige-equivalent-geimplementeerd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Huidige equivalent (geïmplementeerd)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pad-naar-bron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pad naar bron
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pad-positie-eerste-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pad (positie: eerste argument)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        alt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatie-voor-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validatie vóór export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-gedrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build-gedrag
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geschikt-niet-geschikt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geschikt / niet geschikt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fouten-en-oplossingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fouten en oplossingen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-punten-tbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open punten (TBD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerelateerd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerelateerd
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1061,37 +1318,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Brontypes en validatie
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../brontypes-validatie/" class="md-nav__link">
         
   
   
@@ -1107,81 +1337,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhoudsopgave
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vsa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .vsa
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pdf-scan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .pdf (scan)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raster-png-jpg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Raster (.png, .jpg, …)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#musicxml-mxl-als-bron" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .musicxml / .mxl als bron
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zangstukyaml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        zangstuk.yaml
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1366,10 +1521,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vsa" class="md-nav__link">
+  <a href="#samenvatting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .vsa
+        Samenvatting
       
     </span>
   </a>
@@ -1377,10 +1532,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pdf-scan" class="md-nav__link">
+  <a href="#beoogde-doelen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .pdf (scan)
+        Beoogde doelen
       
     </span>
   </a>
@@ -1388,10 +1543,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#raster-png-jpg" class="md-nav__link">
+  <a href="#authoring" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Raster (.png, .jpg, …)
+        Authoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doelsyntax-gepland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doelsyntax (gepland)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huidige-equivalent-geimplementeerd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Huidige equivalent (geïmplementeerd)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pad-naar-bron" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pad naar bron
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pad-positie-eerste-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pad (positie: eerste argument)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        alt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
       
     </span>
   </a>
@@ -1399,10 +1654,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#musicxml-mxl-als-bron" class="md-nav__link">
+  <a href="#validatie-voor-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        .musicxml / .mxl als bron
+        Validatie vóór export
       
     </span>
   </a>
@@ -1410,10 +1665,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zangstukyaml" class="md-nav__link">
+  <a href="#build-gedrag" class="md-nav__link">
     <span class="md-ellipsis">
       
-        zangstuk.yaml
+        Build-gedrag
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geschikt-niet-geschikt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geschikt / niet geschikt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fouten-en-oplossingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fouten en oplossingen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-punten-tbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open punten (TBD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerelateerd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerelateerd
       
     </span>
   </a>
@@ -1437,7 +1747,7 @@
 
 
   
-    <a href="https://github.com/orthodox-groningen/bron/edit/main/docs/reference/brontypes-validatie.md" title="Wijzig deze pagina" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/orthodox-groningen/bron/edit/main/docs/reference/exporttype-svg.md" title="Wijzig deze pagina" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1445,132 +1755,390 @@
   
 
 
-<h1 id="brontypes-en-validatie">Brontypes en validatie<a class="headerlink" href="#brontypes-en-validatie" title="Permanent link">&para;</a></h1>
-<p>Overzicht van validatieregels per brontype in <code>zangstukken/</code>.</p>
-<h2 id="vsa"><code>.vsa</code><a class="headerlink" href="#vsa" title="Permanent link">&para;</a></h2>
+<h1 id="exporttype-embed-svg">Exporttype: embed SVG<a class="headerlink" href="#exporttype-embed-svg" title="Permanent link">&para;</a></h1>
+<p>Contract voor het <strong>svg</strong>-exporttype: VSA-notatie als schaalbare vectorafbeelding
+in een samenstelling (HTML, afdruk).</p>
+<hr />
+<h2 id="samenvatting">Samenvatting<a class="headerlink" href="#samenvatting" title="Permanent link">&para;</a></h2>
+<p>Met exporttype <strong>svg</strong> toon je de muzieknotatie van een <code>.vsa</code>-bestand als SVG in
+de pagina. De lezer ziet dezelfde glyphs en omringende tekst als in VSA, geschikt
+voor scherm en papier. De SVG wordt gegenereerd via conversie
+(<a href="../conversie-vsa-svg/">conversie-vsa-svg</a>); export bepaalt alleen <em>hoe</em> die SVG
+in de samenstelling wordt ingebed.</p>
+<hr />
+<h2 id="beoogde-doelen">Beoogde doelen<a class="headerlink" href="#beoogde-doelen" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Notatie <strong>lezen</strong> in browser (online uitgave)</li>
+<li>Notatie <strong>afdrukken</strong> op A4 (zelfde HTML, <code>@media print</code>)</li>
+<li>Visuele consistentie met VSA-rendering elders in het project</li>
+<li><strong>Niet:</strong> bewerken in MuseScore (gebruik exporttype <a href="../exporttype-mxl/">mxl</a>)</li>
+</ul>
+<hr />
+<h2 id="authoring">Authoring<a class="headerlink" href="#authoring" title="Permanent link">&para;</a></h2>
+<h3 id="doelsyntax-gepland">Doelsyntax (gepland)<a class="headerlink" href="#doelsyntax-gepland" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>:::include svg &quot;praktijk/zondagen/tropaar-zondag-toon-3.vsa&quot; alt=&quot;Tropaar van de zondag, Toon 3&quot; scale=&quot;85%&quot;:::
+</code></pre></div>
+<h3 id="huidige-equivalent-geimplementeerd">Huidige equivalent (geïmplementeerd)<a class="headerlink" href="#huidige-equivalent-geimplementeerd" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>:::include &quot;praktijk/zondagen/tropaar-zondag-toon-3.vsa&quot; alt=&quot;Tropaar van de zondag, Toon 3&quot; scale=&quot;85%&quot;:::
+</code></pre></div>
+<p>Zonder exporttype <code>svg</code> wordt een <code>.vsa</code>-include omgezet naar een
+<code>::: vsa-notatie</code>-blok; <code>build-markdown</code> rendert dat naar SVG. Gedrag is functioneel
+gelijk aan exporttype svg zodra de kanaal-alias is geïmplementeerd.</p>
+<h3 id="pad-naar-bron">Pad naar bron<a class="headerlink" href="#pad-naar-bron" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Tool</th>
-<th>Wanneer</th>
+<th>Regel</th>
+<th>Toelichting</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Parse + semantiek</td>
-<td><code>vsa validate &lt;pad&gt;</code></td>
-<td>Lokaal, CI (gepland)</td>
+<td>Relatief aan includerende <code>.md</code></td>
+<td><code>praktijk/page.md</code> + <code>"melodie.vsa"</code> → <code>praktijk/melodie.vsa</code></td>
 </tr>
 <tr>
-<td>Frontmatter YAML</td>
-<td>handmatig / CI (gepland)</td>
-<td>Bij aanwezigheid van <code>---</code></td>
+<td>Spaties in pad</td>
+<td>Alleen met quotes: <code>"mijn map/melodie.vsa"</code></td>
 </tr>
 <tr>
-<td>Consistentie met <code>zangstuk.yaml</code></td>
-<td>CI (gepland)</td>
-<td>Geen tegenstrijdige <code>title</code>/tone</td>
+<td>Absolute paden</td>
+<td>Niet ondersteund</td>
+</tr>
+<tr>
+<td>Symlinks</td>
+<td>Niet gedocumenteerd; vermijd</td>
 </tr>
 </tbody>
 </table>
-<p>Installatie: <a href="https://github.com/orthodox-groningen/VSA-tooling">VSA-tooling</a>.</p>
-<h2 id="pdf-scan"><code>.pdf</code> (scan)<a class="headerlink" href="#pdf-scan" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h3 id="pad-positie-eerste-argument"><code>pad</code> (positie: eerste argument)<a class="headerlink" href="#pad-positie-eerste-argument" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Tool</th>
-<th>Wanneer</th>
+<th>Veld</th>
+<th>Waarde</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Geldig PDF</td>
-<td>magic bytes / <code>file</code></td>
-<td>CI (gepland)</td>
+<td><strong>Verplicht?</strong></td>
+<td>Ja</td>
 </tr>
 <tr>
-<td>Minstens 1 pagina</td>
-<td>PDF-library</td>
-<td>CI (gepland)</td>
+<td><strong>Type</strong></td>
+<td>Relatief pad naar <code>.vsa</code></td>
 </tr>
 <tr>
-<td>Leesbaarheid</td>
-<td>mens</td>
-<td>Opname scan</td>
+<td><strong>Doel</strong></td>
+<td>Welke bronnotatie wordt getoond</td>
+</tr>
+<tr>
+<td><strong>Toegestane waarden</strong></td>
+<td>Pad dat eindigt op <code>.vsa</code>, bestand bestaat</td>
+</tr>
+<tr>
+<td><strong>Verboden</strong></td>
+<td>Ontbrekend bestand, verkeerde extensie, pad buiten bereik</td>
+</tr>
+<tr>
+<td><strong>Effect</strong></td>
+<td>Bepaalt welke VSA wordt gevalideerd en gerenderd</td>
+</tr>
+<tr>
+<td><strong>Voorbeeld geldig</strong></td>
+<td><code>"tropaar-zondag-toon-3.vsa"</code></td>
+</tr>
+<tr>
+<td><strong>Voorbeeld ongeldig</strong></td>
+<td><code>"ontbreekt.vsa"</code> → <code>IncludeError: Bestand niet gevonden</code></td>
 </tr>
 </tbody>
 </table>
-<p>Padconventie: <code>zangstukken/&lt;id&gt;/sources/scan/*.pdf</code> — zie <code>.gitignore</code> uitzondering.</p>
-<h2 id="raster-png-jpg">Raster (<code>.png</code>, <code>.jpg</code>, …)<a class="headerlink" href="#raster-png-jpg" title="Permanent link">&para;</a></h2>
+<h3 id="alt"><code>alt</code><a class="headerlink" href="#alt" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Tool</th>
-<th>Wanneer</th>
+<th>Veld</th>
+<th>Waarde</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Geldig beeldbestand</td>
-<td>PIL/file</td>
-<td>CI (gepland)</td>
+<td><strong>Verplicht?</strong></td>
+<td>Nee (sterk aanbevolen voor toegankelijkheid)</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>String tussen dubbele quotes: <code>alt="…"</code></td>
+</tr>
+<tr>
+<td><strong>Standaard</strong></td>
+<td>Lege <code>alt</code> bij directe <code>.svg</code>-include; bij <code>.vsa</code>-include via shortcode: <code>"VSA notatie"</code></td>
+</tr>
+<tr>
+<td><strong>Doel</strong></td>
+<td>Tekst voor screenreaders en wanneer afbeelding niet laadt</td>
+</tr>
+<tr>
+<td><strong>Toegestane waarden</strong></td>
+<td>Willekeurige UTF-8-tekst; geen nested quotes zonder escape</td>
+</tr>
+<tr>
+<td><strong>Verboden</strong></td>
+<td>Geen apart attribuutformaat (<code>alt=Tropaar</code> zonder quotes wordt niet herkend)</td>
+</tr>
+<tr>
+<td><strong>Effect</strong></td>
+<td>Bij <code>.vsa</code>: wordt <code># alt: …</code> metadata in het VSA-blok; in HTML: <code>alt</code>-attribuut op <code>&lt;img&gt;</code> / shortcode</td>
+</tr>
+<tr>
+<td><strong>Interactie</strong></td>
+<td>Onafhankelijk van <code>scale</code></td>
+</tr>
+<tr>
+<td><strong>Voorbeeld</strong></td>
+<td><code>alt="Kondak van de zondag, Toon 5"</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="musicxml-mxl-als-bron"><code>.musicxml</code> / <code>.mxl</code> als bron<a class="headerlink" href="#musicxml-mxl-als-bron" title="Permanent link">&para;</a></h2>
+<h3 id="scale"><code>scale</code><a class="headerlink" href="#scale" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Tool</th>
-<th>Wanneer</th>
+<th>Veld</th>
+<th>Waarde</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Well-formed XML</td>
-<td>xmllint / parser</td>
-<td>CI (gepland)</td>
+<td><strong>Verplicht?</strong></td>
+<td>Nee</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Percentage-string: <code>scale="85%"</code></td>
+</tr>
+<tr>
+<td><strong>Standaard</strong></td>
+<td>Geen schaling (100% van natuurlijke SVG-breedte)</td>
+</tr>
+<tr>
+<td><strong>Doel</strong></td>
+<td>Notatie smaller op pagina (meer regels op één scherm/A4)</td>
+</tr>
+<tr>
+<td><strong>Toegestane waarden</strong></td>
+<td>Positief getal + <code>%</code>, bijv. <code>"60%"</code>, <code>"85%"</code>, <code>"100%"</code></td>
+</tr>
+<tr>
+<td><strong>Verboden</strong></td>
+<td>Lege string; niet-numeriek percentage valt terug op ruwe CSS-waarde</td>
+</tr>
+<tr>
+<td><strong>Effect</strong></td>
+<td>Breedte = natuurlijke SVG-breedte × percentage; hoogte schaalt mee via <code>viewBox</code></td>
+</tr>
+<tr>
+<td><strong>Interactie</strong></td>
+<td>Combineert met <code>:::keep-together scale="…"</code> op blokniveau</td>
+</tr>
+<tr>
+<td><strong>Voorbeeld</strong></td>
+<td><code>scale="85%"</code> op tropaar/kondak in zondags-pagina’s</td>
 </tr>
 </tbody>
 </table>
-<p>Alleen wanneer MusicXML <strong>zelfstandige bron</strong> is, niet wanneer het afgeleide van VSA is.</p>
-<h2 id="zangstukyaml"><code>zangstuk.yaml</code><a class="headerlink" href="#zangstukyaml" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Typische waarden in demo</p>
+<p>Zondags-pagina’s in VSA-tooling hugo-demo gebruiken vaak <code>scale="85%"</code> voor
+<code>.vsa</code> en <code>scale="100%"</code> voor JPG-scan van tropaarmelodie.</p>
+</div>
+<hr />
+<h2 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Tool</th>
-<th>Wanneer</th>
+<th>Input</th>
+<th>Vereist?</th>
+<th>Bron</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Schema / verplichte velden</td>
-<td>handmatig; yamllint (gepland)</td>
-<td>Elke wijziging</td>
+<td><code>.vsa</code>-bestand</td>
+<td>Ja</td>
+<td>content-source of gekopieerd uit <code>bron/zangstukken/</code></td>
 </tr>
 <tr>
-<td><code>file:</code> bestaat</td>
-<td>script</td>
-<td>CI (gepland)</td>
+<td><code>.svg</code> afgeleide</td>
+<td>Impliciet</td>
+<td>Wordt bij build gegenereerd uit <code>.vsa</code> (nu inline)</td>
 </tr>
 <tr>
-<td>Eén status per source</td>
-<td>script</td>
-<td>CI (gepland)</td>
-</tr>
-<tr>
-<td><code>based_on</code> geldig</td>
-<td>script</td>
-<td>CI (gepland)</td>
+<td>Vooraf gegenereerde <code>.svg</code></td>
+<td>Alternatief</td>
+<td><code>:::include "bestand.svg"</code> — kopieert SVG naar static, geen VSA-validatie op dat moment</td>
 </tr>
 </tbody>
 </table>
-<p>Validatie-workflow in <code>.github/workflows/</code> volgt in een later increment.</p>
+<p>Sibling-conventie: <code>{stem}.svg</code> hoort bij <code>{stem}.vsa</code>; in CI doel expliciete
+conversiestap vóór export (zie <a href="../../plans/ci-architectuur/">CI-architectuur</a>).</p>
+<hr />
+<h2 id="validatie-voor-export">Validatie vóór export<a class="headerlink" href="#validatie-voor-export" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Tool / moment</th>
+<th>Blokkeert export?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.vsa</code> parseerbaar</td>
+<td><code>vsa validate</code> / build-markdown</td>
+<td>Ja — build faalt</td>
+</tr>
+<tr>
+<td>Semantische VSA-regels</td>
+<td>Zelfde</td>
+<td>Ja</td>
+</tr>
+<tr>
+<td>Include-pad bestaat</td>
+<td><code>resolve_includes</code></td>
+<td>Ja — <code>IncludeError</code></td>
+</tr>
+<tr>
+<td>Geen kring-include</td>
+<td>include-stack</td>
+<td>Ja — <code>IncludeError: Kringverwijzing</code></td>
+</tr>
+<tr>
+<td><code>.svg</code> als directe include</td>
+<td>Geen VSA-validate</td>
+<td>Nee — alleen bestand moet bestaan</td>
+</tr>
+</tbody>
+</table>
+<p>Validatie dient <strong>kwaliteit van bron</strong> vóór publicatie, niet het exporttype zelf.</p>
+<hr />
+<h2 id="build-gedrag">Build-gedrag<a class="headerlink" href="#build-gedrag" title="Permanent link">&para;</a></h2>
+<p><strong>Volgorde in pipeline</strong> (<code>build-markdown</code>):</p>
+<ol>
+<li>Include-resolutie (<code>.vsa</code> → <code>::: vsa-notatie</code>)</li>
+<li>Coria-directives (niet van toepassing op svg)</li>
+<li>Blok-directives (<code>web-only</code>, <code>keep-together</code>, …)</li>
+<li>VSA → SVG rendering</li>
+</ol>
+<p><strong>Huidige stand:</strong> conversie en export lopen deels in één stap (SVG ontstaat tijdens
+build-markdown).</p>
+<p><strong>Doel:</strong> expliciete conversiestap (<code>vsa svg</code>) vóór samenstelling; export leest
+dan <code>.svg</code> of valideert dat afgeleide aanwezig is.</p>
+<p><strong>Output in HTML:</strong> Hugo shortcode <code>{{&lt; vsa … &gt;}}</code> of <code>&lt;img class="vsa-notation"&gt;</code>
+met URL onder <code>/vsa/…</code> (configureerbaar via <code>svg_assets_url_prefix</code>).</p>
+<hr />
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Uitgaveprofiel</th>
+<th>Wat de eindgebruiker ziet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Online</td>
+<td>Schaalbare notatie in pagina</td>
+</tr>
+<tr>
+<td>Afdruk</td>
+<td>Zelfde SVG; <code>@media print</code> verbergt site-chrome</td>
+</tr>
+<tr>
+<td>Bewerking</td>
+<td>Meestal niet het primaire doel van svg</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="geschikt-niet-geschikt">Geschikt / niet geschikt<a class="headerlink" href="#geschikt-niet-geschikt" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Geschikt</th>
+<th>Niet geschikt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Liturgische tekst + notatie op één pagina</td>
+<td>Audio afspelen</td>
+</tr>
+<tr>
+<td>Afdrukbaar boek/deel</td>
+<td>Bewerken in MuseScore</td>
+</tr>
+<tr>
+<td>Consistente VSA-weergave</td>
+<td>Partij kiezen / oefenen (→ <a href="../exporttype-coria/">coria</a>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fouten-en-oplossingen">Fouten en oplossingen<a class="headerlink" href="#fouten-en-oplossingen" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Melding (fragment)</th>
+<th>Oorzaak</th>
+<th>Oplossing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Bestand niet gevonden</code></td>
+<td>Pad typo of bestand niet in content-source</td>
+<td>Pad controleren t.o.v. <code>.md</code>; bestand toevoegen</td>
+</tr>
+<tr>
+<td><code>Kringverwijzing gedetecteerd</code></td>
+<td>A include B include A</td>
+<td>Include-structuur herzien</td>
+</tr>
+<tr>
+<td><code>Onbekend bestandstype</code></td>
+<td>Include van <code>.csv</code>, <code>.pdf</code>, …</td>
+<td>Alleen ondersteunde extensies</td>
+</tr>
+<tr>
+<td>VSA-validatiefout</td>
+<td>Ongeldige <code>.vsa</code>-syntax</td>
+<td><code>vsa validate pad/melodie.vsa</code> lokaal</td>
+</tr>
+<tr>
+<td>Lege of gebroken SVG</td>
+<td>Zeldzaam renderfout</td>
+<td>Issue VSA-tooling; bron <code>.vsa</code> controleren</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="open-punten-tbd">Open punten (TBD)<a class="headerlink" href="#open-punten-tbd" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Implementatie <code>:::include svg</code> als expliciet exporttype (Spoor B)</li>
+<li>Alt-tekst automatisch uit <code>zangstuk.yaml</code> / VSA-frontmatter</li>
+<li>Expliciete conversiestap in CI vóór export</li>
+<li>Validatie dat <code>.svg</code> afgeleide niet verouderd is t.o.v. <code>.vsa</code></li>
+</ul>
+<hr />
+<h2 id="gerelateerd">Gerelateerd<a class="headerlink" href="#gerelateerd" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../conversie-vsa-svg/">Conversie vsa svg</a></li>
+<li><a href="../exportcontracten/">Exportcontracten — overzicht</a></li>
+</ul>
 
 
 

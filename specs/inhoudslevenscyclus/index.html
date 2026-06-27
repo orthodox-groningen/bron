@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://orthodox-groningen.github.io/bron/specs/inhoudslevenscyclus/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../schrijfconventies/">
       
       
         <link rel="next" href="../repo-structuur/">
@@ -446,6 +446,34 @@
     
   
     Specificaties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schrijfconventies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schrijfconventies
   
 
     
@@ -1059,6 +1087,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../reference/conversie-vsa-svg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conversie: vsa svg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/conversie-vsa-musicxml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conversie: vsa musicxml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../reference/exportcontracten/" class="md-nav__link">
         
   
@@ -1067,6 +1151,90 @@
     
   
     Exportcontracten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/exporttype-svg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exporttype: embed SVG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/exporttype-coria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exporttype: Coria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/exporttype-mxl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exporttype: MXL-download
   
 
     
@@ -1184,6 +1352,34 @@
     
   
     Plannen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plans/ci-architectuur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI-architectuur (conversie vs. export)
   
 
     
@@ -1602,16 +1798,28 @@ in <code>.vsa</code> is bedoeld voor gebruik <em>buiten</em> deze repo (bijv. lo
 <h2 id="deel-2-conversiemechanismen">Deel 2 — Conversiemechanismen<a class="headerlink" href="#deel-2-conversiemechanismen" title="Permanent link">&para;</a></h2>
 <p>Conversie verandert <strong>formaat</strong> (bron → afgeleide). Afgeleide worden <strong>niet</strong> in git
 bewaard; ze worden in build-workflows gegenereerd.</p>
-<p>Geregistreerde mechanismen: <a href="../../reference/conversiemechanismen/">Conversiemechanismen</a>.</p>
+<p>Geregistreerde mechanismen:</p>
+<ul>
+<li><a href="../../reference/conversiemechanismen/">Conversiemechanismen — overzicht</a></li>
+<li><a href="../../reference/conversie-vsa-svg/">Conversie vsa svg</a></li>
+<li><a href="../../reference/conversie-vsa-musicxml/">Conversie vsa musicxml</a></li>
+</ul>
 <p><strong>Trigger (doel):</strong> na merge naar <code>main</code> of bij parochie-build wanneer een zangstuk
 wordt opgenomen in een samenstelling.</p>
 <p><strong>Huidige stand:</strong> conversie draait deels inline in VSA-tooling <code>build-markdown</code>;
-expliciete vooraf-build voor alle afgeleide is gepland.</p>
+expliciete vooraf-build voor alle afgeleide is gepland — zie
+<a href="../../plans/ci-architectuur/">CI-architectuur</a>.</p>
 <hr />
 <h2 id="deel-3-exportmechanismen">Deel 3 — Exportmechanismen<a class="headerlink" href="#deel-3-exportmechanismen" title="Permanent link">&para;</a></h2>
 <p>Export bepaalt <strong>hoe</strong> een afgeleide (of handmatige sibling) in een samenstelling
 wordt ontsloten — embedden, Coria-link, download.</p>
-<p>Exportcontracten: <a href="../../reference/exportcontracten/">Exportcontracten</a>.</p>
+<p>Exportcontracten:</p>
+<ul>
+<li><a href="../../reference/exportcontracten/">Exportcontracten — overzicht</a></li>
+<li><a href="../../reference/exporttype-svg/">Exporttype svg</a></li>
+<li><a href="../../reference/exporttype-coria/">Exporttype coria</a></li>
+<li><a href="../../reference/exporttype-mxl/">Exporttype mxl</a></li>
+</ul>
 <p>Authoring-syntax in parochie-/samenstelling-repositories (VSA-tooling):</p>
 <div class="highlight"><pre><span></span><code>:::include svg &quot;melodie.vsa&quot; alt=&quot;…&quot;:::
 :::include coria &quot;melodie.vsa&quot; label=&quot;Oefenen in Coria&quot;:::
