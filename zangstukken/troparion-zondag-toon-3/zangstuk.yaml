@@ -1,0 +1,13 @@
+id: troparion-zondag-toon-3
+title: Tropaar van de zondag, toon 3
+occasion: Zondag (opstandingscyclus)
+occasion_type: zondag-cyclus
+tone: 3
+sources:
+  - id: groningen
+    file: sources/vsa/groningen.vsa
+    author: Parochie Groningen
+    composer: Traditioneel
+    reference: koormap Groningen
+    language: nl
+    copyright_status: vrij

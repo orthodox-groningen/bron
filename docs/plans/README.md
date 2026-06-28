@@ -11,4 +11,5 @@ Bij tegenstrijdigheid gelden:
 4. Pas daarna: plannen in deze map
 
 - [CI-architectuur](ci-architectuur.md) — conversie vs. export workflows (richtlijn)
+- [Migratie zondag-zangstukken](migratie-zondag-zangstukken.md) — bron vullen + hugo-demo koppeling
 - [Samenvatting project](samenvatting-project.md)

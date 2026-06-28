@@ -1,0 +1,14 @@
+id: troparion-melodie-toon-5
+title: Tropaarmelodie van de zondag, toon 5
+occasion: Zondag (opstandingscyclus)
+occasion_type: zondag-cyclus
+tone: 5
+sources:
+  - id: koormap-scan
+    file: sources/scan/koormap-5a.jpg
+    reference: koormap Groningen
+    copyright_status: vrij
+  - id: koormap-scan-alt
+    file: sources/scan/koormap-5.jpg
+    reference: koormap Groningen
+    copyright_status: vrij

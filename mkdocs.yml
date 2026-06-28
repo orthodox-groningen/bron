@@ -63,6 +63,7 @@ nav:
   - Plannen:
     - plans/README.md
     - plans/ci-architectuur.md
+    - plans/migratie-zondag-zangstukken.md
     - plans/samenvatting-project.md
 
 extra_css:

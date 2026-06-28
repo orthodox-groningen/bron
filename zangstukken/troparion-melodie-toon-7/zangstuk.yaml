@@ -1,0 +1,10 @@
+id: troparion-melodie-toon-7
+title: Tropaarmelodie van de zondag, toon 7
+occasion: Zondag (opstandingscyclus)
+occasion_type: zondag-cyclus
+tone: 7
+sources:
+  - id: koormap-scan
+    file: sources/scan/koormap.jpg
+    reference: koormap Groningen
+    copyright_status: vrij

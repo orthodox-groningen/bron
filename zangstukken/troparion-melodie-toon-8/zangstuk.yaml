@@ -1,0 +1,10 @@
+id: troparion-melodie-toon-8
+title: Tropaarmelodie van de zondag, toon 8
+occasion: Zondag (opstandingscyclus)
+occasion_type: zondag-cyclus
+tone: 8
+sources:
+  - id: koormap-scan
+    file: sources/scan/koormap.jpg
+    reference: koormap Groningen
+    copyright_status: vrij
