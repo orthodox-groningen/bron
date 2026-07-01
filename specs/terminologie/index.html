@@ -1570,10 +1570,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#16-promotie-registratie" class="md-nav__link">
+  <a href="#16-manifest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        16. Promotie (registratie)
+        16. Manifest
       
     </span>
   </a>
@@ -1581,10 +1581,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#17-samenstelling" class="md-nav__link">
+  <a href="#17-promotie-registratie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17. Samenstelling
+        17. Promotie (registratie)
       
     </span>
   </a>
@@ -1592,10 +1592,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#18-compositie" class="md-nav__link">
+  <a href="#18-samenstelling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18. Compositie
+        18. Samenstelling
       
     </span>
   </a>
@@ -1603,10 +1603,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#19-conversiemechanisme-exportmechanisme-exporttype" class="md-nav__link">
+  <a href="#19-compositie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        19. Conversiemechanisme, exportmechanisme, exporttype
+        19. Compositie
       
     </span>
   </a>
@@ -1614,10 +1614,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#20-disambiguatie-variant" class="md-nav__link">
+  <a href="#20-conversiemechanisme-exportmechanisme-exporttype" class="md-nav__link">
     <span class="md-ellipsis">
       
-        20. Disambiguatie “variant”
+        20. Conversiemechanisme, exportmechanisme, exporttype
       
     </span>
   </a>
@@ -1625,10 +1625,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#21-open-punten" class="md-nav__link">
+  <a href="#21-disambiguatie-variant" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21. Open punten
+        21. Disambiguatie “variant”
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-open-punten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Open punten
       
     </span>
   </a>
@@ -1918,7 +1929,7 @@
 </tr>
 <tr>
 <td>Yaml (invoer)</td>
-<td><code>uitvoeringsvorm_id: Hemelum</code></td>
+<td><code>uitvoeringsvorm-id: Hemelum</code></td>
 <td><code>hemelum</code></td>
 </tr>
 <tr>
@@ -1980,6 +1991,11 @@
 <td>“bronvariant” (informeel)</td>
 <td><strong>source-entry</strong> / <strong>representatie</strong></td>
 <td>uitvoeringsvorm</td>
+</tr>
+<tr>
+<td>“metadata-yaml”, “config” in zangstuk-map</td>
+<td><strong>manifest</strong></td>
+<td>npm-/package-manifest, build-manifest, <code>zangstuk.yaml</code></td>
 </tr>
 </tbody>
 </table>
@@ -2125,7 +2141,7 @@
 </tr>
 <tr>
 <td><strong>Nee</strong></td>
-<td>Abstract zangstuk; <code>melodie.svg</code> (afgeleide); alleen <code>variant.yaml</code></td>
+<td>Abstract zangstuk; <code>melodie.svg</code> (afgeleide); manifest (§16) zonder bronbestand</td>
 </tr>
 <tr>
 <td><strong>Nee</strong></td>
@@ -2313,7 +2329,80 @@
 </table>
 <p>Zie <a href="../../manuals/parochie-lokaal-zangstukken/">parochie-lokaal zangstukken</a>.</p>
 <hr />
-<h2 id="16-promotie-registratie">16. Promotie (registratie)<a class="headerlink" href="#16-promotie-registratie" title="Permanent link">&para;</a></h2>
+<h2 id="16-manifest">16. Manifest<a class="headerlink" href="#16-manifest" title="Permanent link">&para;</a></h2>
+<p><strong>Criterium:</strong> Bestand M is een <strong>manifest</strong> dan en slechts dan als:</p>
+<ol>
+<li>M is een YAML-bestand met <strong>vaste bestandsnaam</strong> op één van de twee niveaus <strong>variant</strong> (§6) of <strong>uitvoeringsvorm</strong> (§7) binnen het vier-niveaumodel (§1), <strong>en</strong></li>
+<li>M registreert precies <strong>één</strong> entiteit op dat niveau via het bijbehorende id-veld (<code>variant-id</code> of <code>uitvoeringsvorm-id</code>), <strong>en</strong></li>
+<li>M beschrijft uitsluitend <strong>metadata</strong> over die entiteit (titels, aliassen, herkomst, <code>based_on</code>, verwijzingen naar representaties) — M is zelf <strong>geen</strong> representatie (§8), bronbestand (§10) of samenstelling (§18).</li>
+</ol>
+<p><strong>Vaste bestandsnamen (canoniek):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Bestandsnaam</th>
+<th>Id-veld in yaml</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variant</td>
+<td><code>variant.yaml</code></td>
+<td><code>variant-id</code></td>
+</tr>
+<tr>
+<td>Uitvoeringsvorm</td>
+<td><code>uitvoeringsvorm.yaml</code></td>
+<td><code>uitvoeringsvorm-id</code></td>
+</tr>
+</tbody>
+</table>
+<p>Meerdere manifesten in dezelfde mappenstructuur noemen wij <strong>manifesten</strong> (meervoud).</p>
+<p><strong>Toelichting:</strong> Een manifest is de machine-leesbare registratie van variant- of uitvoeringsvorm-metadata. Op uitvoeringsvorm-niveau mag een manifest representaties <strong>verwijzen</strong> (<code>representaties:</code> met <code>representatie-id</code> en relatief <code>file:</code>), zonder zelf notatie te bevatten.</p>
+<p><strong>Parochie-lokaal:</strong> manifesten staan onder <code>content-source/lokaal/&lt;zangstuk-id&gt;/&lt;variant-id&gt;/…</code> — zie <a href="../../manuals/parochie-lokaal-zangstukken/">parochie-lokaal zangstukken</a>.</p>
+<p><strong>Relatie tot bron-repository:</strong> <code>zangstuk.yaml</code> en <code>sources:</code> (§13 source-entry) zijn <strong>geen</strong> manifest — ander plat model, andere bestandsnaam.</p>
+<p><strong>Implementatiestatus:</strong> velden zijn vandaag vooral <strong>informatief</strong> voor beheerders; validatie in tooling richt zich primair op bronbestanden en samenstelling-includes.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Voorbeeld</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ja</strong></td>
+<td><code>lokaal/…/liturgikon-weekdagen/variant.yaml</code></td>
+</tr>
+<tr>
+<td><strong>Ja</strong></td>
+<td><code>lokaal/…/hemelum/uitvoeringsvorm.yaml</code> met <code>representaties: [{ representatie-id: hemelum, … }]</code></td>
+</tr>
+<tr>
+<td><strong>Nee</strong></td>
+<td><code>hemelum.vsa</code> (bronbestand / representatie)</td>
+</tr>
+<tr>
+<td><strong>Nee</strong></td>
+<td><code>zangstuk.yaml</code> in bron-repository (source-entry-model)</td>
+</tr>
+<tr>
+<td><strong>Nee</strong></td>
+<td><code>antifonen-hemelum.md</code> (samenstelling)</td>
+</tr>
+<tr>
+<td><strong>Nee</strong></td>
+<td>npm <code>package.json</code>, PWA manifest, CI build-manifest, <code>.gitignore</code>-patroon <code>*.manifest</code></td>
+</tr>
+<tr>
+<td><strong>Randgeval</strong></td>
+<td>Manifest zonder representatie-verwijzing — uitvoeringsvorm met 0 representaties (§1)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-promotie-registratie">17. Promotie (registratie)<a class="headerlink" href="#17-promotie-registratie" title="Permanent link">&para;</a></h2>
 <p><strong>Criterium:</strong> <strong>Promotie</strong> is overgang parochie-lokaal → geregistreerd door source-entry (+ bronbestand) in bron-repository, met behoud van canonieke ids.</p>
 <table>
 <thead>
@@ -2334,7 +2423,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="17-samenstelling">17. Samenstelling<a class="headerlink" href="#17-samenstelling" title="Permanent link">&para;</a></h2>
+<h2 id="18-samenstelling">18. Samenstelling<a class="headerlink" href="#18-samenstelling" title="Permanent link">&para;</a></h2>
 <p><strong>Criterium:</strong> D is een <strong>samenstelling</strong> dan en slechts dan als D markdown (met VSA-directives) representaties ordent voor een lezersdoel, zonder zelf representatie te zijn.</p>
 <table>
 <thead>
@@ -2355,16 +2444,16 @@
 </tbody>
 </table>
 <hr />
-<h2 id="18-compositie">18. Compositie<a class="headerlink" href="#18-compositie" title="Permanent link">&para;</a></h2>
+<h2 id="19-compositie">19. Compositie<a class="headerlink" href="#19-compositie" title="Permanent link">&para;</a></h2>
 <p><strong>Criterium:</strong> C is een <strong>compositie</strong> dan en slechts dan als C YAML onder <code>composities/</code> in bron-repository is met geordende verwijzingen naar zangstukken (toekomst: <code>(zangstuk-id, variant-id, uitvoeringsvorm-id)</code>).</p>
 <p><em>(Nog niet geïmplementeerd.)</em></p>
 <hr />
-<h2 id="19-conversiemechanisme-exportmechanisme-exporttype">19. Conversiemechanisme, exportmechanisme, exporttype<a class="headerlink" href="#19-conversiemechanisme-exportmechanisme-exporttype" title="Permanent link">&para;</a></h2>
+<h2 id="20-conversiemechanisme-exportmechanisme-exporttype">20. Conversiemechanisme, exportmechanisme, exporttype<a class="headerlink" href="#20-conversiemechanisme-exportmechanisme-exporttype" title="Permanent link">&para;</a></h2>
 <p><strong>Conversiemechanisme M:</strong> gedefinieerde tool M(B)=G; G is <strong>afgeleide</strong>.</p>
 <p><strong>Exportmechanisme:</strong> hoe een samenstelling bronbestand of afgeleide ontsluit.</p>
 <p><strong>Exporttype:</strong> naam in <code>:::include &lt;type&gt;</code> — <code>svg</code>, <code>coria</code>, <code>mxl</code>.</p>
 <hr />
-<h2 id="20-disambiguatie-variant">20. Disambiguatie “variant”<a class="headerlink" href="#20-disambiguatie-variant" title="Permanent link">&para;</a></h2>
+<h2 id="21-disambiguatie-variant">21. Disambiguatie “variant”<a class="headerlink" href="#21-disambiguatie-variant" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2397,7 +2486,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="21-open-punten">21. Open punten<a class="headerlink" href="#21-open-punten" title="Permanent link">&para;</a></h2>
+<h2 id="22-open-punten">22. Open punten<a class="headerlink" href="#22-open-punten" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2409,6 +2498,10 @@
 <tr>
 <td>Geneste yaml variant→uitvoeringsvorm→repr in bron</td>
 <td>Uitgesteld</td>
+</tr>
+<tr>
+<td>Manifest-term bij geneste yaml in bron (§16)</td>
+<td>Open</td>
 </tr>
 <tr>
 <td>Alias-resolver in tooling</td>
@@ -2434,6 +2527,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2026-07</td>
+<td>Term <strong>manifest</strong> (§16); yaml id-velden met koppelteken; §17–§21 hernummerd</td>
+</tr>
 <tr>
 <td>2026-06</td>
 <td>Vier-niveau-model, uitvoeringsvorm-id, aliassen, canonieke ids, gebruiksregels §0</td>

@@ -1305,15 +1305,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manifest-subset" class="md-nav__link">
+  <a href="#manifest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manifest (subset)
+        Manifest
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Manifest (subset)">
+    <nav class="md-nav" aria-label="Manifest">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1458,17 +1458,18 @@
 <p><strong>Canonieke ids:</strong> <code>^[a-z0-9_-]+$</code> — zie <a href="../../specs/terminologie/">terminologie</a>.</p>
 <p><strong>Referentie-implementatie (VSA-demo):</strong> <a href="https://github.com/orthodox-groningen/VSA-tooling/tree/main/examples/hugo-demo/content-source/lokaal">VSA-tooling — hugo-demo/lokaal</a>.</p>
 <hr />
-<h2 id="manifest-subset">Manifest (subset)<a class="headerlink" href="#manifest-subset" title="Permanent link">&para;</a></h2>
+<h2 id="manifest">Manifest<a class="headerlink" href="#manifest" title="Permanent link">&para;</a></h2>
+<p>Zie <a href="../../specs/terminologie/#16-manifest">terminologie §16</a>.</p>
 <h3 id="variantyaml"><code>variant.yaml</code><a class="headerlink" href="#variantyaml" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">zangstuk_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">antifoon-1-weekdagen</span>
-<span class="nt">variant_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liturgikon-weekdagen</span>
+<div class="highlight"><pre><span></span><code><span class="nt">zangstuk-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">antifoon-1-weekdagen</span>
+<span class="nt">variant-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liturgikon-weekdagen</span>
 <span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1e</span><span class="nv"> </span><span class="s">antifoon</span><span class="nv"> </span><span class="s">weekdagen</span><span class="nv"> </span><span class="s">(Liturgikon-melodielijn)&quot;</span>
 
 <span class="nt">aliases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> text</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1e</span><span class="nv"> </span><span class="s">antifoon</span><span class="nv"> </span><span class="s">weekdagen&quot;</span><span class="p p-Indicator">,</span><span class="nt"> lang</span><span class="p">:</span><span class="w"> </span><span class="nv">nl</span><span class="w"> </span><span class="p p-Indicator">}</span>
 </code></pre></div>
 <h3 id="uitvoeringsvormyaml"><code>uitvoeringsvorm.yaml</code><a class="headerlink" href="#uitvoeringsvormyaml" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">uitvoeringsvorm_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hemelum</span>
+<div class="highlight"><pre><span></span><code><span class="nt">uitvoeringsvorm-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hemelum</span>
 <span class="nt">based_on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liturgikon</span>
 <span class="nt">herkomst</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Parochie</span><span class="nv"> </span><span class="s">Hemelum</span><span class="nv"> </span><span class="s">(Liturgikon-praktijk)&quot;</span>
@@ -1478,7 +1479,7 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> text</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hemelum&quot;</span><span class="p p-Indicator">,</span><span class="nt"> lang</span><span class="p">:</span><span class="w"> </span><span class="nv">nl</span><span class="w"> </span><span class="p p-Indicator">}</span>
 
 <span class="nt">representaties</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">representatie_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hemelum</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">representatie-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hemelum</span>
 <span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repr/hemelum.vsa</span>
 </code></pre></div>
 <p>Yaml-velden zijn <strong>informatief</strong> voor beheerders; de build valideert vandaag vooral bronbestanden en markdown-includes (tool-specifiek).</p>
