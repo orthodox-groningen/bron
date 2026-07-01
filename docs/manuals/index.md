@@ -6,3 +6,4 @@ Procedures voor beheerders van de bron-repository.
 - [Zangstuk toevoegen](zangstuk-toevoegen.md)
 - [Bronvariant toevoegen](bronvariant-toevoegen.md)
 - [Copyright en access](copyright-access.md)
+- [Parochie-lokaal zangstukken](parochie-lokaal-zangstukken.md)

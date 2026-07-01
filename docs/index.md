@@ -5,12 +5,12 @@ waarheid voor zangstukken binnen [orthodox-groningen](https://github.com/orthodo
 
 ## Wat vind je hier
 
-| Sectie            | Inhoud                                                                        |
-| ----------------- | ----------------------------------------------------------------------------- |
-| **Specificaties** | Normatieve beschrijving: inhoudslevenscyclus, repo-structuur, `zangstuk.yaml` |
-| **Handleidingen** | Stap-voor-stap workflows voor beheerders                                      |
-| **Referentie**    | Lookup-tabellen: conversiemechanismen, exportcontracten, brontype-validatie   |
-| **Plannen**       | Ontwikkelplannen — *niet normatief*; specs en handleidingen zijn leidend      |
+| Sectie            | Inhoud                                                                                  |
+| ----------------- | --------------------------------------------------------------------------------------- |
+| **Specificaties** | Normatieve org-docs: terminologie, inhoudslevenscyclus, repo-structuur, `zangstuk.yaml` |
+| **Handleidingen** | Stap-voor-stap workflows (incl. parochie-lokaal zangstukken)                            |
+| **Referentie**    | Lookup-tabellen: conversiemechanismen, exportcontracten, brontype-validatie             |
+| **Plannen**       | Ontwikkelplannen — *niet normatief*; specs en handleidingen zijn leidend                |
 
 ## Wat staat *niet* op deze site
 
