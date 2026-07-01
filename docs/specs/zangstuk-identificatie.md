@@ -8,6 +8,6 @@
 | [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md) | Parochie-lokaal model en promotie                                  |
 | [documentatie-eigendom.md](documentatie-eigendom.md)                     | Waar specs horen (bron vs tool-repo's)                             |
 
-**Kern (samenvatting):** vier niveaus — zangstuk → variant → uitvoeringsvorm → representatie (0..n). Id-velden: `zangstuk-id`, `variant-id`, `uitvoeringsvorm-id`, `representatie-id`.
+**Kern (samenvatting):** vier niveaus — zangstuk → variant → uitvoeringsvorm → representatie (0..n). Id-velden: `zangstuk-id`, `variant-id`, `uitvoeringsvorm-id`, `representatie-id`. Parochie-lokaal metadata: **manifest** (§16 in terminologie).
 
 **Demo-site (VSA-tooling):** [zangstuk-identificatie](https://github.com/orthodox-groningen/VSA-tooling/tree/main/examples/hugo-demo/content-source/zangstuk-identificatie).

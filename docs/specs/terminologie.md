@@ -149,7 +149,7 @@ Meerdere matches na normalisatie → **fout** met kandidaten (canoniek id + cont
 | ------------- | ------------------------------ | ---------------------- |
 | CLI           | `--uitvoeringsvorm Groningen`  | `groningen`            |
 | CLI           | `--variant касторский` (alias) | `kastorski`            |
-| Yaml (invoer) | `uitvoeringsvorm_id: Hemelum`  | `hemelum`              |
+| Yaml (invoer) | `uitvoeringsvorm-id: Hemelum`  | `hemelum`              |
 | Zoek-UI       | “eerste antifoon weekdagen”    | `antifoon-1-weekdagen` |
 
 **Implementatiestatus:** contract gedocumenteerd; resolver in tooling **nog niet** geïmplementeerd.
@@ -170,6 +170,7 @@ Leesvorm: “*gangbaar* noemen wij *precieze term*, niet verwarren met *…*.”
 | “bron” (bestand)                             | **bronbestand**                      | bron-repository                |
 | “bron” (repo)                                | **bron-repository**                  | bronbestand                    |
 | “bronvariant” (informeel)                    | **source-entry** / **representatie** | uitvoeringsvorm                |
+| “metadata-yaml”, “config” in zangstuk-map    | **manifest**                         | npm-/package-manifest, build-manifest, `zangstuk.yaml` |
 
 ---
 
@@ -244,7 +245,7 @@ Leesvorm: “*gangbaar* noemen wij *precieze term*, niet verwarren met *…*.”
 |               | Voorbeeld                                                                                |
 | ------------- | ---------------------------------------------------------------------------------------- |
 | **Ja**        | `hemelum.vsa`; Liturgikon-scan PDF; inline VSA-blok (tot extraktie)                      |
-| **Nee**       | Abstract zangstuk; `melodie.svg` (afgeleide); alleen `variant.yaml`                      |
+| **Nee**       | Abstract zangstuk; `melodie.svg` (afgeleide); manifest (§16) zonder bronbestand          |
 | **Nee**       | Tweede melodie Cherubijnenhymne → andere **variant**, geen tweede repr. onder dezelfde U |
 | **Randgeval** | Identieke `.vsa`, twee `representatie-id`s → duplicaat; vermijden                        |
 
@@ -341,7 +342,44 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 ---
 
-## 16. Promotie (registratie)
+## 16. Manifest
+
+**Criterium:** Bestand M is een **manifest** dan en slechts dan als:
+
+1. M is een YAML-bestand met **vaste bestandsnaam** op één van de twee niveaus **variant** (§6) of **uitvoeringsvorm** (§7) binnen het vier-niveaumodel (§1), **en**
+2. M registreert precies **één** entiteit op dat niveau via het bijbehorende id-veld (`variant-id` of `uitvoeringsvorm-id`), **en**
+3. M beschrijft uitsluitend **metadata** over die entiteit (titels, aliassen, herkomst, `based_on`, verwijzingen naar representaties) — M is zelf **geen** representatie (§8), bronbestand (§10) of samenstelling (§18).
+
+**Vaste bestandsnamen (canoniek):**
+
+| Niveau          | Bestandsnaam           | Id-veld in yaml      |
+| --------------- | ---------------------- | -------------------- |
+| Variant         | `variant.yaml`         | `variant-id`         |
+| Uitvoeringsvorm | `uitvoeringsvorm.yaml` | `uitvoeringsvorm-id` |
+
+Meerdere manifesten in dezelfde mappenstructuur noemen wij **manifesten** (meervoud).
+
+**Toelichting:** Een manifest is de machine-leesbare registratie van variant- of uitvoeringsvorm-metadata. Op uitvoeringsvorm-niveau mag een manifest representaties **verwijzen** (`representaties:` met `representatie-id` en relatief `file:`), zonder zelf notatie te bevatten.
+
+**Parochie-lokaal:** manifesten staan onder `content-source/lokaal/<zangstuk-id>/<variant-id>/…` — zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
+
+**Relatie tot bron-repository:** `zangstuk.yaml` en `sources:` (§13 source-entry) zijn **geen** manifest — ander plat model, andere bestandsnaam.
+
+**Implementatiestatus:** velden zijn vandaag vooral **informatief** voor beheerders; validatie in tooling richt zich primair op bronbestanden en samenstelling-includes.
+
+|               | Voorbeeld                                                                                          |
+| ------------- | -------------------------------------------------------------------------------------------------- |
+| **Ja**        | `lokaal/…/liturgikon-weekdagen/variant.yaml`                                                       |
+| **Ja**        | `lokaal/…/hemelum/uitvoeringsvorm.yaml` met `representaties: [{ representatie-id: hemelum, … }]` |
+| **Nee**       | `hemelum.vsa` (bronbestand / representatie)                                                        |
+| **Nee**       | `zangstuk.yaml` in bron-repository (source-entry-model)                                            |
+| **Nee**       | `antifonen-hemelum.md` (samenstelling)                                                             |
+| **Nee**       | npm `package.json`, PWA manifest, CI build-manifest, `.gitignore`-patroon `*.manifest`             |
+| **Randgeval** | Manifest zonder representatie-verwijzing — uitvoeringsvorm met 0 representaties (§1)              |
+
+---
+
+## 17. Promotie (registratie)
 
 **Criterium:** **Promotie** is overgang parochie-lokaal → geregistreerd door source-entry (+ bronbestand) in bron-repository, met behoud van canonieke ids.
 
@@ -352,7 +390,7 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 ---
 
-## 17. Samenstelling
+## 18. Samenstelling
 
 **Criterium:** D is een **samenstelling** dan en slechts dan als D markdown (met VSA-directives) representaties ordent voor een lezersdoel, zonder zelf representatie te zijn.
 
@@ -363,7 +401,7 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 ---
 
-## 18. Compositie
+## 19. Compositie
 
 **Criterium:** C is een **compositie** dan en slechts dan als C YAML onder `composities/` in bron-repository is met geordende verwijzingen naar zangstukken (toekomst: `(zangstuk-id, variant-id, uitvoeringsvorm-id)`).
 
@@ -371,7 +409,7 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 ---
 
-## 19. Conversiemechanisme, exportmechanisme, exporttype
+## 20. Conversiemechanisme, exportmechanisme, exporttype
 
 **Conversiemechanisme M:** gedefinieerde tool M(B)=G; G is **afgeleide**.
 
@@ -381,7 +419,7 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 ---
 
-## 20. Disambiguatie “variant”
+## 21. Disambiguatie “variant”
 
 | Bedoeling                                                 | Term                | Toets                                                  |
 | --------------------------------------------------------- | ------------------- | ------------------------------------------------------ |
@@ -392,11 +430,12 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 ---
 
-## 21. Open punten
+## 22. Open punten
 
 | Onderwerp                                          | Status     |
 | -------------------------------------------------- | ---------- |
 | Geneste yaml variant→uitvoeringsvorm→repr in bron  | Uitgesteld |
+| Manifest-term bij geneste yaml in bron (§16)       | Open       |
 | Alias-resolver in tooling                          | Open       |
 | Automatische terminologie-lint (R1–R2)             | Open       |
 | `.coria.html` definitief bron vs afgeleide         | Open       |
@@ -407,4 +446,5 @@ Zie [parochie-lokaal zangstukken](../manuals/parochie-lokaal-zangstukken.md).
 
 | Datum   | Wijziging                                                                         |
 | ------- | --------------------------------------------------------------------------------- |
+| 2026-07 | Term **manifest** (§16); yaml id-velden met koppelteken; §17–§21 hernummerd       |
 | 2026-06 | Vier-niveau-model, uitvoeringsvorm-id, aliassen, canonieke ids, gebruiksregels §0 |

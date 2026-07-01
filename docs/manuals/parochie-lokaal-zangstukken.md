@@ -37,13 +37,15 @@ content-source/
 
 ---
 
-## Manifest (subset)
+## Manifest
+
+Zie [terminologie §16](../specs/terminologie.md#16-manifest).
 
 ### `variant.yaml`
 
 ```yaml
-zangstuk_id: antifoon-1-weekdagen
-variant_id: liturgikon-weekdagen
+zangstuk-id: antifoon-1-weekdagen
+variant-id: liturgikon-weekdagen
 title: "1e antifoon weekdagen (Liturgikon-melodielijn)"
 
 aliases:
@@ -53,7 +55,7 @@ aliases:
 ### `uitvoeringsvorm.yaml`
 
 ```yaml
-uitvoeringsvorm_id: hemelum
+uitvoeringsvorm-id: hemelum
 based_on: liturgikon
 herkomst:
   author: "Parochie Hemelum (Liturgikon-praktijk)"
@@ -63,7 +65,7 @@ aliases:
   - { text: "Hemelum", lang: nl }
 
 representaties:
-  - representatie_id: hemelum
+  - representatie-id: hemelum
     file: repr/hemelum.vsa
 ```
 
